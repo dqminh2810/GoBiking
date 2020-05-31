@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9090/ServiceClient?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/goBikingWSCache" />
+  <xs:import schemaLocation="http://localhost:9090/ServiceClient?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:9090/ServiceClient?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/goBikingWSSuggestion" />
+  <xs:element name="loadContracts">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="loadContractsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/goBikingWSCache" minOccurs="0" name="loadContractsResult" nillable="true" type="q1:ArrayOfContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="loadStations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contractname" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="loadStationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/goBikingWSCache" minOccurs="0" name="loadStationsResult" nillable="true" type="q2:ArrayOfStation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="loadStation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="stationnumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="loadStationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/goBikingWSCache" minOccurs="0" name="loadStationResult" nillable="true" type="q3:Station" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="loadContract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contractname" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="loadContractResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/goBikingWSCache" minOccurs="0" name="loadContractResult" nillable="true" type="q4:Contract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="loadStationPostion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="stationnumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="loadStationPostionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/goBikingWSCache" minOccurs="0" name="loadStationPostionResult" nillable="true" type="q5:Location" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRoute">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lat1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lng1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lat2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lng2" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRouteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/goBikingWSCache" minOccurs="0" name="getRouteResult" nillable="true" type="q6:ArrayOfLocation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRouteFromStations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="stationnumber1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="stationnumber2" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRouteFromStationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/goBikingWSCache" minOccurs="0" name="getRouteFromStationsResult" nillable="true" type="q7:ArrayOfLocation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDistance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lat1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lng1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lat2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lng2" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDistanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getDistanceResult" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getNearestStations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lat" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lng" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="station_contract_name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getNearestStationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="getNearestStationsResult" nillable="true" type="q8:ArrayOfKeyValueOfStationdouble0_SJ1sqlA" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getReviews">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="place_id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getReviewsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/goBikingWSSuggestion" minOccurs="0" name="getReviewsResult" nillable="true" type="q9:ArrayOfReview" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="nearBySearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lat" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lng" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="radius" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="nearBySearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/goBikingWSSuggestion" minOccurs="0" name="nearBySearchResult" nillable="true" type="q10:ArrayOfPlace" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

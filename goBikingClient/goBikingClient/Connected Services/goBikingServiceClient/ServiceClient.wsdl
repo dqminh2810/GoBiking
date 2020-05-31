@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceClient" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:9090/ServiceClient?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:9090/ServiceClient?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:9090/ServiceClient?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/goBikingWSCache" />
+      <xsd:import schemaLocation="http://localhost:9090/ServiceClient?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:9090/ServiceClient?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/goBikingWSSuggestion" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceClient_loadContracts_InputMessage">
+    <wsdl:part name="parameters" element="tns:loadContracts" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClient_loadContracts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:loadContractsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClient_loadStations_InputMessage">
+    <wsdl:part name="parameters" element="tns:loadStations" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClient_loadStations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:loadStationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClient_loadStation_InputMessage">
+    <wsdl:part name="parameters" element="tns:loadStation" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClient_loadStation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:loadStationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClient_loadContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:loadContract" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClient_loadContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:loadContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClient_loadStationPostion_InputMessage">
+    <wsdl:part name="parameters" element="tns:loadStationPostion" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClient_loadStationPostion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:loadStationPostionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClient_getRoute_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRoute" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClient_getRoute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRouteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClient_getRouteFromStations_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRouteFromStations" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClient_getRouteFromStations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRouteFromStationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClient_getDistance_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDistance" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClient_getDistance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDistanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClient_getNearestStations_InputMessage">
+    <wsdl:part name="parameters" element="tns:getNearestStations" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClient_getNearestStations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getNearestStationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClient_getReviews_InputMessage">
+    <wsdl:part name="parameters" element="tns:getReviews" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClient_getReviews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getReviewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClient_nearBySearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:nearBySearch" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClient_nearBySearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:nearBySearchResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceClient">
+    <wsdl:operation name="loadContracts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClient/loadContracts" message="tns:IServiceClient_loadContracts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClient/loadContractsResponse" message="tns:IServiceClient_loadContracts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="loadStations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClient/loadStations" message="tns:IServiceClient_loadStations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClient/loadStationsResponse" message="tns:IServiceClient_loadStations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="loadStation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClient/loadStation" message="tns:IServiceClient_loadStation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClient/loadStationResponse" message="tns:IServiceClient_loadStation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="loadContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClient/loadContract" message="tns:IServiceClient_loadContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClient/loadContractResponse" message="tns:IServiceClient_loadContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="loadStationPostion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClient/loadStationPostion" message="tns:IServiceClient_loadStationPostion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClient/loadStationPostionResponse" message="tns:IServiceClient_loadStationPostion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRoute">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClient/getRoute" message="tns:IServiceClient_getRoute_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClient/getRouteResponse" message="tns:IServiceClient_getRoute_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRouteFromStations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClient/getRouteFromStations" message="tns:IServiceClient_getRouteFromStations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClient/getRouteFromStationsResponse" message="tns:IServiceClient_getRouteFromStations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDistance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClient/getDistance" message="tns:IServiceClient_getDistance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClient/getDistanceResponse" message="tns:IServiceClient_getDistance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getNearestStations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClient/getNearestStations" message="tns:IServiceClient_getNearestStations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClient/getNearestStationsResponse" message="tns:IServiceClient_getNearestStations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getReviews">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClient/getReviews" message="tns:IServiceClient_getReviews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClient/getReviewsResponse" message="tns:IServiceClient_getReviews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="nearBySearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClient/nearBySearch" message="tns:IServiceClient_nearBySearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClient/nearBySearchResponse" message="tns:IServiceClient_nearBySearch_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceClient" type="tns:IServiceClient">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="loadContracts">
+      <soap:operation soapAction="http://tempuri.org/IServiceClient/loadContracts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadStations">
+      <soap:operation soapAction="http://tempuri.org/IServiceClient/loadStations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadStation">
+      <soap:operation soapAction="http://tempuri.org/IServiceClient/loadStation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadContract">
+      <soap:operation soapAction="http://tempuri.org/IServiceClient/loadContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadStationPostion">
+      <soap:operation soapAction="http://tempuri.org/IServiceClient/loadStationPostion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoute">
+      <soap:operation soapAction="http://tempuri.org/IServiceClient/getRoute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRouteFromStations">
+      <soap:operation soapAction="http://tempuri.org/IServiceClient/getRouteFromStations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDistance">
+      <soap:operation soapAction="http://tempuri.org/IServiceClient/getDistance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNearestStations">
+      <soap:operation soapAction="http://tempuri.org/IServiceClient/getNearestStations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReviews">
+      <soap:operation soapAction="http://tempuri.org/IServiceClient/getReviews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="nearBySearch">
+      <soap:operation soapAction="http://tempuri.org/IServiceClient/nearBySearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceClient">
+    <wsdl:port name="BasicHttpBinding_IServiceClient" binding="tns:BasicHttpBinding_IServiceClient">
+      <soap:address location="http://localhost:9090/ServiceClient/soap" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
